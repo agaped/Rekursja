@@ -13,16 +13,24 @@ public class Stick {
         list = new LinkedList<>();
     }
 
-    public void addToTheEnd(Disc disc){
+    public void addToTheEnd(Disc disc) {
         list.add(disc);
     }
 
-    public Disc takeFromTheBegining(){
+    public Disc takeLastElement() {
         return list.pollFirst();
     }
 
     @Override
     public String toString() {
-        return name+": "+list;
+        return name;
+    }
+
+
+    public void printContent() {
+        for (Disc d : list) {
+            System.out.print(d + " ");
+        }
+        System.out.println();
     }
 }

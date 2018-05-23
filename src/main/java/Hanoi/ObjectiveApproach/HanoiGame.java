@@ -7,44 +7,49 @@ public class HanoiGame {
     Stick B;
     Stick C;
     int disc;
-    int counter=0;
+    int counter = 0;
 
     public HanoiGame(int discNumber) {
         A = new Stick("A");
         B = new Stick("B");
         C = new Stick("C");
-        disc=discNumber;
+        disc = discNumber;
     }
 
-    public int counter(){
+    public int counter() {
         return counter;
     }
 
-    public double countMinMoveNumber(int discNumber){
-        return Math.pow(2, discNumber)-1;
+    public double countMinMoveNumber(int discNumber) {
+        return Math.pow(2, discNumber) - 1;
     }
 
-    public void initializeFirstStickWithDiscs(int discNumber, Stick from){
-        for(int i=1; i<=discNumber; i++){
+    public void initializeFirstStickWithDiscs(int discNumber, Stick from) {
+        for (int i = discNumber; i >= 1; i--) {
             from.addToTheEnd(new Disc(i));
         }
     }
 
-    public void hanoiRecursion(int discNumber, Stick from, Stick to, Stick buffor){
-        Disc buffer;
+    public void hanoiRecursion(int discNumber, Stick from, Stick to, Stick buffor) {
         if (discNumber > 0) {
-            buffer=from.takeFromTheBegining();
-            buffor.addToTheEnd(buffer);
+
+            Disc buffer = moveDisc(from, buffor);
 
             hanoiRecursion(discNumber - 1, from, buffor, to);
 
             counter++;
-            System.out.println(from + " --> " + to);
 
-            buffer=buffor.takeFromTheBegining();
-            to.addToTheEnd(buffer);
+            System.out.println(buffer + " " + from + " --> " + to);
+            moveDisc(buffor, to);
 
             hanoiRecursion(discNumber - 1, buffor, to, from);
         }
+    }
+
+    private Disc moveDisc(Stick from, Stick to) {
+        Disc buffer;
+        buffer = from.takeLastElement();
+        to.addToTheEnd(buffer);
+        return buffer;
     }
 }

@@ -10,12 +10,12 @@ public class Disc {
         this.number = number;
     }
 
-    public int getNumber(){
+    public int getNumber() {
         return number;
     }
 
     @Override
     public String toString() {
-        return ""+number;
+        return "" + number;
     }
 }
