@@ -1,5 +1,5 @@
 # Rekursja
 
-CodingBat exercises related to recursion
+-CodingBat exercises related to recursion
 
-Hanoi implementation
+-Hanoi implementation
