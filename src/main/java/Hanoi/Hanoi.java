@@ -1,6 +1,9 @@
 package Hanoi;
 
 
+import Hanoi.ObjectiveApproach.HanoiGame;
+import Hanoi.ObjectiveApproach.Stick;
+
 public class Hanoi {
 
     private int counter = 0;
@@ -22,7 +25,13 @@ public class Hanoi {
         hanoi.hanoiRecursion(disc, 'A', 'B', 'C');
         System.out.println(Math.pow(2,disc)-1 == hanoi.counter ? true: false);
 
-
+//--------------------
+       HanoiGame hanoiGame=new HanoiGame(3);
+       Stick A=new Stick("A");
+       Stick B=new Stick("B");
+       Stick C=new Stick("C");
+       hanoiGame.initializeFirstStickWithDiscs(3,A);
+        hanoiGame.hanoiRecursion(3,A,B,C);
 
     }
 
