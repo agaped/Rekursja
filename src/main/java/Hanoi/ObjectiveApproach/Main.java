@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        HanoiGame hanoiGame = new HanoiGame(3);
+        HanoiGame hanoiGame = new HanoiGame();
 
         Stick A = new Stick("A");
         Stick B = new Stick("B");
