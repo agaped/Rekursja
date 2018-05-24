@@ -17,8 +17,8 @@ public class Stick {
         list.add(disc);
     }
 
-    public Disc takeLastElement() {
-        return list.pollFirst();
+    public Disc takeFromTheEnd() {
+        return list.pollLast();
     }
 
     @Override
@@ -28,9 +28,10 @@ public class Stick {
 
 
     public void printContent() {
+        System.out.print(name + " [");
         for (Disc d : list) {
             System.out.print(d + " ");
         }
-        System.out.println();
+        System.out.println("\b]");
     }
 }
