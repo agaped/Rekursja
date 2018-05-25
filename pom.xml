@@ -41,7 +41,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.ox.Main</mainClass>
+                            <mainClass>Hanoi.ObjectiveApproach.HanoiRunner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

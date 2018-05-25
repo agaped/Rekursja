@@ -1,7 +1,7 @@
 package Hanoi.ObjectiveApproach;
 
 
-public class Main {
+public class HanoiRunner {
 
     public static void main(String[] args) {
 
