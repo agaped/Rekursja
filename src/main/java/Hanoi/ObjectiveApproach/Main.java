@@ -1,6 +1,5 @@
 package Hanoi.ObjectiveApproach;
 
-import java.util.Scanner;
 
 public class Main {
 
@@ -12,12 +11,7 @@ public class Main {
         Stick B = new Stick("B");
         Stick C = new Stick("C");
 
-
-        System.out.print("Enter number of discs: ");
-        Scanner scanner = new Scanner(System.in);
-        int discs = scanner.nextInt();
-
-        hanoiGame.solveHanoi(discs, A, B, C);
+        hanoiGame.solveHanoi(A, B, C);
 
     }
 }

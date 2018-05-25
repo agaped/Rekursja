@@ -28,10 +28,6 @@ public class Stick {
 
 
     public void printContent() {
-        System.out.print(name + " [");
-        for (Disc d : list) {
-            System.out.print(d + " ");
-        }
-        System.out.println("\b]");
+        System.out.print(name +" "+list+" ");
     }
 }

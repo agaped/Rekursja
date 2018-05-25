@@ -7,22 +7,29 @@ public class HanoiGame {
     private  Stick B;
     private Stick C;
 
+    private DiscNumberValidator discNumberValidator;
+
     public HanoiGame() {
         A = new Stick("A");
         B = new Stick("B");
         C = new Stick("C");
+        discNumberValidator =new DiscNumberValidator();
     }
 
 
-    public void solveHanoi(int discNumber, Stick start, Stick middle, Stick end) {
+    public void solveHanoi(Stick start, Stick middle, Stick end) {
+        int discNumber =discNumberValidator.validate();
         initializeFirstStickWithDiscs(discNumber, start);
-        start.printContent();
+
+        printSticksContent(start, middle, end);
+
         try {
             solve(discNumber, start, middle, end);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-        end.printContent();
+
+        printSticksContent(start, middle, end);
     }
 
     private void initializeFirstStickWithDiscs(int discNumber, Stick from) {
@@ -32,8 +39,8 @@ public class HanoiGame {
     }
 
     private void solve(int discNumber, Stick start, Stick middle, Stick end) throws InterruptedException {
-        if(discNumber>20 || discNumber<0){
-            throw new IllegalArgumentException("Disc number should be between 1-20");
+        if(discNumber>10 || discNumber<0){
+            throw new IllegalArgumentException("Disc number should be between 1-10");
         }
         if (discNumber > 0) {
             solve(discNumber - 1, start, end, middle);
@@ -54,5 +61,12 @@ public class HanoiGame {
         buffer = from.takeFromTheEnd();
         to.addToTheEnd(buffer);
         return buffer;
+    }
+
+    private void printSticksContent(Stick start, Stick middle, Stick end) {
+        start.printContent();
+        middle.printContent();
+        end.printContent();
+        System.out.println();
     }
 }
