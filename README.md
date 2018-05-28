@@ -6,6 +6,6 @@
 
 To play Hanoi type in the console:
 
-mvn clean install
+>mvn clean install
 
-run.sh
+>bash run.sh
