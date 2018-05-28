@@ -1,16 +1,17 @@
 package Hanoi.ObjectiveApproach;
 
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Stick {
 
-    private LinkedList<Disc> list;
+    private Deque<Disc> list;
     private String name;
 
     public Stick(String name) {
         this.name = name;
-        list = new LinkedList<>();
+        list = new ArrayDeque<>();
     }
 
     public void addToTheEnd(Disc disc) {
