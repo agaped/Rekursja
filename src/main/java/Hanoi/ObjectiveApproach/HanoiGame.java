@@ -40,7 +40,7 @@ public class HanoiGame {
 
     private void solve(int discNumber, Stick start, Stick middle, Stick end) throws InterruptedException {
         if(discNumber>10 || discNumber<0){
-            throw new IllegalArgumentException("Disc number should be between 1-10");
+            throw new IllegalArgumentException("Disc number should be between 1-9");
         }
         if (discNumber > 0) {
             solve(discNumber - 1, start, end, middle);
@@ -48,7 +48,6 @@ public class HanoiGame {
             Disc buffer = moveDisc(start, middle);
 
             System.out.println("[" + buffer + "] " + " " + start + " --> " + end);
-            Thread.sleep(500);
 
             moveDisc(middle, end);
 

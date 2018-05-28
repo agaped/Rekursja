@@ -7,7 +7,7 @@ public class DiscNumberValidator {
     private Scanner scanner = new Scanner(System.in);
 
     public int validate(){
-        System.out.print("Enter number of discs between 1-10: ");
+        System.out.print("Enter number of discs between 1-9: ");
         String input=scanner.nextLine();
 
         while(!input.matches("[1-9]")){
